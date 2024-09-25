@@ -1,5 +1,6 @@
 export const uiPath = {
-  register: "/register",
+  register: "register",
+  login: "login",
 };
 
 export const apiPath = {

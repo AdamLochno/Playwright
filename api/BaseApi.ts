@@ -1,8 +1,8 @@
 // BaseApi.ts
-import { request } from "@playwright/test";
+import { request, APIRequestContext } from "@playwright/test";
 
 export class BaseApi {
-  protected requestContext: any;
+  protected requestContext: APIRequestContext;
   protected baseURL: string; // Dodaj pole baseURL
 
   // Nowa metoda do inicjalizacji kontekstu

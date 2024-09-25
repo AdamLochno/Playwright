@@ -4,11 +4,13 @@ export class BasePage {
   protected page: Page;
   protected browser: Browser;
   protected context: BrowserContext;
+  protected baseURL: string;
 
   constructor(page: Page, browser: Browser, context: BrowserContext) {
     this.page = page;
     this.browser = browser;
     this.context = context;
+    this.baseURL = "https://demoqa.com/";
   }
 
   async startBrowser() {
