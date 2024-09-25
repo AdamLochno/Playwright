@@ -1,17 +1,18 @@
 import { Browser, BrowserContext, Page } from "@playwright/test";
 import { BasePage } from "./BasePage";
+import { uiPath } from "../utils/Paths"; // Upewnij się, że poprawnie importujesz uiPath
 
 export class LoginPage extends BasePage {
-  private usernameField = 'input[name="username"]';
-  private passwordField = 'input[name="password"]';
-  private loginButton = 'button[type="submit"]';
+  private usernameField = 'input[id="userName"]';
+  private passwordField = 'input[id="password"]';
+  private loginButton = 'button[id="login"]';
 
   constructor(page: Page, browser: Browser, context: BrowserContext) {
     super(page, browser, context);
   }
 
   public async getPageUrl(): Promise<string> {
-    return "https://demoqa.com/login";
+    return `${this.baseURL}${uiPath.login}`; // Łączenie baseURL i uiPath
   }
 
   async login(username: string, password: string) {
@@ -24,6 +25,6 @@ export class LoginPage extends BasePage {
   }
 
   async verifyLoginPageUrl() {
-    await this.verifyUrl("https://demoqa.com/login");
+    await this.verifyUrl(await this.getPageUrl());
   }
 }
