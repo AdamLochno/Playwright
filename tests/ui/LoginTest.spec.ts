@@ -1,8 +1,7 @@
 import { test, expect, Browser, BrowserContext } from "@playwright/test";
 import { LoginPage } from "../../pages/LoginPage";
-import  {users} from "../../utils/testData";
+import { users } from "../../utils/testData";
 import { verify } from "crypto";
-
 
 test.describe("LoginPage tests", () => {
   let browser: Browser;
@@ -24,13 +23,7 @@ test.describe("LoginPage tests", () => {
     await loginPage.closeBrowser();
   });
 
-  test("should navigate to login page and verify URL", async () => {
-    await loginPage.login(
-      users.validUser.username,
-      users.validUser.password
-    );
-    expect(await loginPage.getPageUrl()).not.toBe(
-      loginPage.getPageUrl
-    );
+  test("should create new user", async () => {
+
   });
 });

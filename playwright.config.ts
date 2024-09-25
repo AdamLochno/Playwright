@@ -26,7 +26,8 @@ export default defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     viewport: { width: 1280, height: 720 },
-    baseURL: "https://www.saucedemo.com/",
+    baseURL: "https://demoqa.com/",
+    headless: false, // Set this to false to show the browser UI
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on-first-retry",
